@@ -1,0 +1,8 @@
+# AwesomeProject
+APLICATIVO DE CORRIDA, COM BANCO DE DADOS 
+    BAIXAR O PROJETO
+git clone  Ricardoalmeida54/AwesomeProject
+ 
+ INSTALAR OS PACOTES DO PROJETO
+ 
+ NPM I
