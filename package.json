@@ -3,13 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
+    "android-build": "export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && cd android && ./gradlew bundleRelease",
+    "android-build-apk": "export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && cd android && ./gradlew assembleRelease",
+    "android": "export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9090 tcp:9090 && react-native run-android",
+    "ios": "react-native run-ios --device='iPhone de Silvio'",
+    "ios11": "react-native run-ios",
+    "androidclean": "export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && cd android && ./gradlew clean",
+    "ios6s": "react-native run-ios --simulator='iPhone 6s'",
+    "ios6sPlus": "react-native run-ios --simulator='iPhone 6s Plus'",
+    "iosSmall": "react-native run-ios --simulator='iPhone 5s'",
+    "pod": "cd ios && pod install",
+    "start": "export JAVA_HOME=`/usr/libexec/java_home -v 1.8` && adb reverse tcp:8081 tcp:8081 && adb reverse tcp:9090 tcp:9090 && adb reverse tcp:8000 tcp:8000 && react-native start --reset-cache",
+    "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/cli": "^6.1.0",
     "react": "17.0.2",
     "react-native": "0.66.1",
     "react-native-credit-card-input": "^0.4.1",
@@ -21,8 +29,10 @@
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
     "eslint": "7.14.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "2.4.1",
     "react-test-renderer": "17.0.2"
   },
   "jest": {

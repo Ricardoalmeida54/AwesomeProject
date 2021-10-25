@@ -37,22 +37,32 @@ const Ride = () => {
     }, []);
 
   return (
-      <Container padding={30} justify="flex-start">
-          <Container align="flex-start" height={40} >
-            <Title>Cadastre seu veiculo</Title>
-            <SubTitle>Preencha os campos abaixo.</SubTitle>
-          </Container>
-          <Container justify="flex-start">
-            
-          </Container>
-          {visible && (
-               <Container height={70} justify="flex-end">
+    <>
+        <Container row height={50} justify="flex-start">
+        <Container>
+            <SubTitle align="flex-start" padding={20}> Voltar </SubTitle>
+        </Container>
+        <Container>
+            <SubTitle>Corrida </SubTitle>
+        </Container>
+        <Container align="flex-end" padding={20}></Container>
+            </Container>
+
+            <Container padding={30}>
+                <Container height={90} justify="flex-start">
+                    <Input placeholder="Embarque"/>
+                    <Input placeholder="Destino"/>
+                </Container>
+            </Container>
+            <Container></Container>
+            {visible && (
+               <Container height={300} padding={93} justify="flex-end">
                     <Button>
             <ButtonText>Comece a usar</ButtonText>
             </Button>
           </Container>
   )}
-      </Container>
+  </>
   );
 };
 
