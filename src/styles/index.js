@@ -75,3 +75,7 @@ padding-top: 10;
 background: #f90;
 `;
 
+export const AddressItem = styled.TouchableOpacity`
+    padding: 5px 0;
+    align-items: flex-start;
+`;

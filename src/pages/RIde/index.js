@@ -9,6 +9,8 @@ import {
     SubTitle,
     Input,
     Spacer,
+    AddressList,
+    AddressItem,
     } from '../../styles';
 
 
@@ -48,15 +50,24 @@ const Ride = () => {
         <Container align="flex-end" padding={20}></Container>
             </Container>
 
-            <Container padding={30}>
+            <Container padding={30} justify="flex-start">
                 <Container height={90} justify="flex-start">
                     <Input placeholder="Embarque"/>
                     <Input placeholder="Destino"/>
                 </Container>
+            <Container>
+        <AddressList data={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]}
+        renderItem={({ item, index}) => (
+            <AddressItem>
+                <SubTitle bold> Menlo Parl</SubTitle>
+                <SubTitle small> Palo Alto, CA</SubTitle>
+            </AddressItem>
+        )}
+        />
             </Container>
-            <Container></Container>
+            </Container>
             {visible && (
-               <Container height={300} padding={93} justify="flex-end">
+               <Container height={118} padding={30}  justify="flex-end">
                     <Button>
             <ButtonText>Comece a usar</ButtonText>
             </Button>
