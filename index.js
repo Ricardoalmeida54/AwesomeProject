@@ -10,4 +10,5 @@ import Login from './src/pages/Login'
 import Type from './src/pages/Steps/type'
 import Payment from './src/pages/Steps/payment'
 import Ride from './src/pages/RIde'
-AppRegistry.registerComponent(appName, () => Ride);
+import Home from './src/pages/Home'
+AppRegistry.registerComponent(appName, () => Home);
