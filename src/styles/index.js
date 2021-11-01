@@ -18,7 +18,7 @@ export const Container = styled.View`
     z-index: ${(props) => props.zIndex || 1};
     `;
     export const Button = styled.TouchableOpacity`
-    width: 120%;
+    width: 100%;
     padding: ${(props) => props.compact ? 5 : 15}px;
     opacity: ${props => props.disabled ? 0.5 : 1};
     background: ${props => props.type ? theme.colors[props.type] : theme.colors.primary};
@@ -90,10 +90,18 @@ opacity: ${props => (props.disabled ? 0.2 : 1)};
 
 `;
 
-export const Avatar = styled.Image`
+export const Avatar = styled.Image.attrs({
+    elevation: 50,
+})`
 width: ${props => props.small ? '35px' : '50px'};
 height: ${props => props.small ? '35px' : '50px'};
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 background: ${theme.colors.muted};
 border-radius: ${props => props.small ? '35px' : '50px'};
+`;
+
+export const VerticalSeparator = styled.View`
+width: 1px;
+height: 100%;
+background-color: ${theme.colors.muted};
 `;

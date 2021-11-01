@@ -1,59 +1,43 @@
 
-import React, {useState, useEffect} from 'react';
-import {Keyboard} from 'react-native';
+import React from 'react';
+import {Image} from 'react-native';
 
 import {
     Container,
     Button,
     ButtonText, Title,
     SubTitle,
-    Input,
-    Spacer,
-    } from '../../styles';
+    PickerButton } from '../../styles';
+
+import car from '../../assets/car.png';
+
+import hand from '../../assets/hand.png';
 
 
-
-
-const Ride = () => {
-    // O BOTAO USAR TRATADO COMO UM OBJETO NA LINHA 37 > 43 > 
-    const [visible, setVisible] = useState(true);
-
-    useEffect(() => {
-        const KeyboardDidShowListener = Keyboard.addListener(
-            'keyboardDidShow',
-            () => setVisible(false),
-        );
-
-        const KeyboardDidHideListener = Keyboard.addListener(
-            'keyboardDidHide',
-            () => setVisible(true),
-        );
-
-        return() => {
-            KeyboardDidShowListener.remove();
-            KeyboardDidHideListener.remove();
-        }
-
-    }, []);
-
+const Type = () => {
   return (
       <Container padding={30} justify="flex-start">
           <Container align="flex-start" height={40} >
-            <Title>Cadastre seu veiculo</Title>
-            <SubTitle>Preencha os campos abaixo.</SubTitle>
+            <Title>Passageiro ou motorista?</Title>
+            <SubTitle>Selecione qual será a sua função no Driverx.</SubTitle>
           </Container>
-          <Container justify="flex-start">
-            
+          <Container>
+            <PickerButton>
+            <Image source={car} />
+            <Title>Motorista</Title>
+            </PickerButton>
+            <PickerButton active>
+            <Image source={hand} />
+            <Title>Passageiro</Title>
+            </PickerButton>
           </Container>
-          {visible && (
-               <Container height={70} justify="flex-end">
-                    <Button>
-            <ButtonText>Comece a usar</ButtonText>
+          <Container height={70} justify="flex-end">
+            <Button>
+            <ButtonText>Próximo Passo</ButtonText>
             </Button>
           </Container>
-  )}
       </Container>
   );
 };
 
-export default Ride;
+export default Type;
