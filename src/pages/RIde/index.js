@@ -11,6 +11,7 @@ import {
     Spacer,
     AddressList,
     AddressItem,
+    Bullet,
     } from '../../styles';
 
 
@@ -52,7 +53,9 @@ const Ride = () => {
 
             <Container padding={30} justify="flex-start">
                 <Container height={90} justify="flex-start">
+                   
                     <Input placeholder="Embarque"/>
+                 
                     <Input placeholder="Destino"/>
                 </Container>
             <Container>
