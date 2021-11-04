@@ -8,5 +8,5 @@ Reactotron.setAsyncStorageHandler(AsyncStorage)
 .use(reactotronRedux())
 .connect();
 
-console.log = Reactotron;
+console.tron = Reactotron;
 export default Reactotron;

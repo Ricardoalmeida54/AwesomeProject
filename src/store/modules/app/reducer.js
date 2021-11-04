@@ -17,6 +17,9 @@ case types.UPDATE_USER: {
         draft.user = { ...state.user, ...action.user};
     });
     }
+default: 
+    return state;
+
 }
 }
 
